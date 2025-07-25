@@ -66,25 +66,20 @@ def initialize_detector() -> SpamDetector:
             logger.info("Initializing spam detector...")
             detector = SpamDetector()
             
-            # Force retrain with enhanced features (remove this after first run)
+            # Train model on first deployment
             model_path = 'spam_detector_model.joblib'
-            logger.info("Training enhanced model with new features...")
-            training_results = detector.train_model()
-            detector.save_model(model_path)
-            
-            # Log training performance for monitoring
-            logger.info(f"Model training completed:")
-            logger.info(f"  - Test Accuracy: {training_results['test_accuracy']:.3f}")
-            logger.info(f"  - Cross-validation: {training_results['cv_mean']:.3f} ± {training_results['cv_std']:.3f}")
-            logger.info(f"  - Total Features: {training_results['total_features']}")
-            
-            # Uncomment below for normal operation after retraining:
-            # if detector.load_model(model_path):
-            #     logger.info(f"Successfully loaded pre-trained model from {model_path}")
-            # else:
-            #     logger.info("No pre-trained model found. Training new model...")
-            #     training_results = detector.train_model()
-            #     detector.save_model(model_path)
+            if detector.load_model(model_path):
+                logger.info(f"Successfully loaded pre-trained model from {model_path}")
+            else:
+                logger.info("No pre-trained model found. Training new model...")
+                training_results = detector.train_model()
+                detector.save_model(model_path)
+                
+                # Log training performance for monitoring
+                logger.info(f"Model training completed:")
+                logger.info(f"  - Test Accuracy: {training_results['test_accuracy']:.3f}")
+                logger.info(f"  - Cross-validation: {training_results['cv_mean']:.3f} ± {training_results['cv_std']:.3f}")
+                logger.info(f"  - Total Features: {training_results['total_features']}")
                 
         except Exception as e:
             logger.error(f"Failed to initialize spam detector: {str(e)}")
@@ -438,7 +433,7 @@ def internal_server_error(error):
 if __name__ == '__main__':
     # Get configuration from environment variables
     host = os.environ.get('HOST', '0.0.0.0')
-    port = int(os.environ.get('PORT', 5000))
+    port = int(os.environ.get('PORT', 10000))  # Render default port
     debug = os.environ.get('FLASK_ENV') != 'production'
     
     logger.info(f"Starting Flask application on {host}:{port}")
@@ -452,7 +447,5 @@ if __name__ == '__main__':
         logger.error(f"Failed to initialize detector on startup: {str(e)}")
         logger.error("Application will attempt to initialize on first request")
     
-    # Start the Flask development server
-    # For production, use a WSGI server like gunicorn:
-    # gunicorn --bind 0.0.0.0:5000 --workers 4 app:app
+    # Start the Flask server
     app.run(host=host, port=port, debug=debug, threaded=True)

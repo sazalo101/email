@@ -379,3 +379,34 @@ IndexError: index 16 is out of bounds for axis 0 with size 15
 2025-07-25 12:46:45,835 - __main__ - INFO - Analyzing email of length 123 characters
 2025-07-25 12:46:45,873 - __main__ - INFO - Analysis completed: SPAM (99.0%) in 38.5ms
 2025-07-25 12:46:45,879 - werkzeug - INFO - 192.168.8.5 - - [25/Jul/2025 12:46:45] "POST /analyze HTTP/1.1" 200 -
+2025-07-25 13:21:50,707 - werkzeug - ERROR - 127.0.0.1 - - [25/Jul/2025 13:21:50] code 400, message Bad request version ('\x02h2\x08http/1.1\x00\x12\x00\x00ÿ\x01\x00\x01\x00\x00')
+2025-07-25 13:21:50,711 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 13:21:50] "[31m[1m\x16\x03\x01\x06à\x01\x00\x06Ü\x03\x035«×öºo5hPQ\x06¬ã!xE\x1d×\x02+-Æ\x8av6r\x01R9S\x92ä H\x02ë~±âÀ\x10\x91\x1eÌ¶û\x14ì_/ßÕÜºv6r§ÎÈi\x86¤Õ\x1d\x00 JJ\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06sªª\x00\x00DÍ\x00\x05\x00\x03\x02h2\x00\x10\x00\x0e\x00\x0c\x02h2\x08http/1.1\x00\x12\x00\x00ÿ\x01\x00\x01\x00\x00[0m" 400 -
+2025-07-25 13:21:50,732 - werkzeug - ERROR - 127.0.0.1 - - [25/Jul/2025 13:21:50] code 400, message Bad request version ('aÎ"Âh;ò\x9e\x9d\x84<.a~½Ô\x93')
+2025-07-25 13:21:50,740 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 13:21:50] "[31m[1m\x16\x03\x01\x06 \x01\x00\x06\x9c\x03\x03>¨\x8aL\x84Ø\x13\x03"HÜ\x17<º£ÓÑºDf´\x94æêÛ\x9ch þV©ì µ%\x18ÝÑ®ìÌö\x1bú\x92x\x82h\x9a*[\x0b\x99ãÁ\x8f=ýd\x1cÿÀ\x97¹ë\x00 úú\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x063ªª\x00\x00\x003\x04ï\x04íúú\x00\x01\x00\x11ì\x04À*à¿\x19h0\x9ebÏja\x81õ"C\x1a÷±wá çU©\x00\x9ag¢ç\x83[ùË\x90ELrµu|\x03¼\x10Ã7\x04÷\x00^¶? %Z\x91\x98¹\x85¬pòc\x15¿ÆÃjãVÆu\x02?;qÇ\x19t\x10¬±\x11amÆG*78Í\x0e¶ÄÞtRä(k\x97q\x9f¯$9\x19W·nÌ\x9eÎ\x13:\x1bØ4-cC\x17»[0Us\x8dç~IBx\x1a\x16\x1d§¢¹®I\x1f'£\\\x9bú\x11Ùy\x19jÉÆ{"\x09ÿ\x9b:\x0b\x90p¦a°\x8cÃ\x95²\x82\x0b}c¤ÜuG©£()h\x8fs\x188û@½r'Â\x00A\x82\x8fC\x1c±\x09l\x17«\x01Ð\x0bÅó\x11(\x1a\x08y\x8eÀF\x83¢[q\x02\x8b\x11\x1b_8Ä#q\x99mlà3¦u\x19\x8eÜ \x8f;d\x7fi\x89F$Süj\x81f5,ïº\x8co\x95\x8c´¦(\x9cL¨ìÉJzð\x04DÌo|È\x1a\x096\x01ø£kÎv\x9d\x95æTËÚMå\x06Êpu>¿â\x94Á©\x92'\x1a\x82ëê<\x13\x9c\x12\x031{p\x03\x00@ë¦ÿX\x1e\x14W3lW\x03ì\x08Í¾ÖY#\x89VØÐ3Oë\x1dþª0Ý\x1c\x17\x08Vaò\x1b\x0cP5Ì»Ât¿Ö¹\\7/R\x12­Ç¡\x8a\x94ÕZ\x87Ts\x99adeìs\x18\x83\x04¡âÈ\x90¨¸»Ñ^,pÆÄA;:æËÇØDl\x13'×\x9c-\x0b\x98{Ëè\x89\x8e6V»3\x95\x98d\x18ÇD -\x17o\\ Ì:fT§b\x1fõJ5`ÐA¤\x9b\x1e¤\x00\x0fW¸\x9cä1\x8f.³ajÖ/^\x99·©\x92lüçg\x0b<D¯°N]ð©\x82±ÁÌ\\\x0bÁ'_¯{\x8f|HA¹à,b¶s\x9a¼\x0c4\x82Ä\x03,\x8a¿« Ñ(\x91Hx¢\x0b\x1c\x11\x9a#\x88Ï\x11\x8eâ\x19p\x97æ)¡°Ê\x04\x8b} Æ¨~\x8b\x1dâ\x15\x15f\x1c\x85\x01p\x004\x17È_I¶&Ø4ê\x97ÇËd\x82¡¸4ºIm\x87¶ªmtx\x01aJ`CY×*Î\x94G´ÿu/¡*ª\x95\x80\x8dS¤rI×H\x84À\x81fB\x11\x09aÎ"Âh;ò\x9e\x9d\x84<.a~½Ô\x93[0m" 400 -
+2025-07-25 13:21:56,458 - __main__ - INFO - Serving main web interface
+2025-07-25 13:21:56,478 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 13:21:56] "GET / HTTP/1.1" 200 -
+2025-07-25 13:21:57,112 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 13:21:57] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-25 13:22:04,545 - __main__ - INFO - Invalid input rejected: Email text is too long (maximum 10,000 characters)
+2025-07-25 13:22:04,547 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 13:22:04] "[31m[1mPOST /analyze HTTP/1.1[0m" 400 -
+2025-07-25 13:23:48,490 - werkzeug - INFO -  * Detected change in '/home/sazalo/devpost/app.py.tmp.128716.1753439028481', reloading
+2025-07-25 13:23:49,784 - werkzeug - INFO -  * Restarting with watchdog (inotify)
+2025-07-25 13:23:56,506 - __main__ - INFO - Starting Flask application on 0.0.0.0:10000
+2025-07-25 13:23:56,507 - __main__ - INFO - Debug mode: True
+2025-07-25 13:23:56,507 - __main__ - INFO - Initializing spam detector...
+2025-07-25 13:23:56,507 - __main__ - INFO - Training enhanced model with new features...
+2025-07-25 13:23:56,696 - __main__ - INFO - Model training completed:
+2025-07-25 13:23:56,696 - __main__ - INFO -   - Test Accuracy: 1.000
+2025-07-25 13:23:56,697 - __main__ - INFO -   - Cross-validation: 0.956 ± 0.058
+2025-07-25 13:23:56,697 - __main__ - INFO -   - Total Features: 210
+2025-07-25 13:23:56,697 - __main__ - INFO - Spam detector initialized successfully on startup
+2025-07-25 13:23:56,729 - werkzeug - WARNING -  * Debugger is active!
+2025-07-25 13:23:56,730 - werkzeug - INFO -  * Debugger PIN: 140-877-960
+2025-07-25 13:24:11,978 - werkzeug - INFO -  * Detected change in '/home/sazalo/devpost/app.py.tmp.128716.1753439051972', reloading
+2025-07-25 13:24:13,371 - werkzeug - INFO -  * Restarting with watchdog (inotify)
+2025-07-25 13:24:19,571 - __main__ - INFO - Starting Flask application on 0.0.0.0:10000
+2025-07-25 13:24:19,572 - __main__ - INFO - Debug mode: True
+2025-07-25 13:24:19,572 - __main__ - INFO - Initializing spam detector...
+2025-07-25 13:24:19,583 - __main__ - INFO - Successfully loaded pre-trained model from spam_detector_model.joblib
+2025-07-25 13:24:19,584 - __main__ - INFO - Spam detector initialized successfully on startup
+2025-07-25 13:24:19,614 - werkzeug - WARNING -  * Debugger is active!
+2025-07-25 13:24:19,615 - werkzeug - INFO -  * Debugger PIN: 140-877-960
