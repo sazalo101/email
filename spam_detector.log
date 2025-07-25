@@ -1,0 +1,381 @@
+2025-07-25 12:29:31,518 - __main__ - INFO - Starting Flask application on 0.0.0.0:5000
+2025-07-25 12:29:31,518 - __main__ - INFO - Debug mode: True
+2025-07-25 12:29:31,518 - __main__ - INFO - Initializing spam detector...
+2025-07-25 12:29:31,519 - __main__ - INFO - No pre-trained model found. Training new model...
+2025-07-25 12:29:31,662 - __main__ - INFO - Model training completed:
+2025-07-25 12:29:31,662 - __main__ - INFO -   - Test Accuracy: 0.923
+2025-07-25 12:29:31,663 - __main__ - INFO -   - Cross-validation: 0.980 ± 0.040
+2025-07-25 12:29:31,663 - __main__ - INFO -   - Total Features: 106
+2025-07-25 12:29:31,663 - __main__ - INFO - Spam detector initialized successfully on startup
+2025-07-25 12:29:31,717 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.5:5000
+2025-07-25 12:29:31,717 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-25 12:29:31,740 - werkzeug - INFO -  * Restarting with watchdog (inotify)
+2025-07-25 12:29:37,630 - __main__ - INFO - Starting Flask application on 0.0.0.0:5000
+2025-07-25 12:29:37,631 - __main__ - INFO - Debug mode: True
+2025-07-25 12:29:37,632 - __main__ - INFO - Initializing spam detector...
+2025-07-25 12:29:37,645 - __main__ - INFO - Successfully loaded pre-trained model from spam_detector_model.joblib
+2025-07-25 12:29:37,645 - __main__ - INFO - Spam detector initialized successfully on startup
+2025-07-25 12:29:37,688 - werkzeug - WARNING -  * Debugger is active!
+2025-07-25 12:29:37,690 - werkzeug - INFO -  * Debugger PIN: 140-877-960
+2025-07-25 12:29:40,080 - __main__ - INFO - Serving main web interface
+2025-07-25 12:29:40,111 - werkzeug - INFO - 192.168.8.5 - - [25/Jul/2025 12:29:40] "GET / HTTP/1.1" 200 -
+2025-07-25 12:30:06,622 - __main__ - INFO - Analyzing email of length 115 characters
+2025-07-25 12:30:06,677 - __main__ - INFO - Analysis completed: NOT SPAM (5.8%) in 55.7ms
+2025-07-25 12:30:06,682 - werkzeug - INFO - 192.168.8.5 - - [25/Jul/2025 12:30:06] "POST /analyze HTTP/1.1" 200 -
+2025-07-25 12:30:46,360 - __main__ - INFO - Analyzing email of length 96 characters
+2025-07-25 12:30:46,437 - __main__ - INFO - Analysis completed: SPAM (87.7%) in 67.5ms
+2025-07-25 12:30:46,444 - werkzeug - INFO - 192.168.8.5 - - [25/Jul/2025 12:30:46] "POST /analyze HTTP/1.1" 200 -
+2025-07-25 12:31:44,785 - werkzeug - INFO -  * Detected change in '/home/sazalo/devpost/spam_detector.py.tmp.128716.1753435904775', reloading
+2025-07-25 12:31:46,557 - werkzeug - INFO -  * Restarting with watchdog (inotify)
+2025-07-25 12:31:53,088 - __main__ - INFO - Starting Flask application on 0.0.0.0:5000
+2025-07-25 12:31:53,088 - __main__ - INFO - Debug mode: True
+2025-07-25 12:31:53,088 - __main__ - INFO - Initializing spam detector...
+2025-07-25 12:31:53,094 - __main__ - INFO - Successfully loaded pre-trained model from spam_detector_model.joblib
+2025-07-25 12:31:53,094 - __main__ - INFO - Spam detector initialized successfully on startup
+2025-07-25 12:31:53,123 - werkzeug - WARNING -  * Debugger is active!
+2025-07-25 12:31:53,124 - werkzeug - INFO -  * Debugger PIN: 140-877-960
+2025-07-25 12:32:04,708 - werkzeug - INFO -  * Detected change in '/home/sazalo/devpost/spam_detector.py.tmp.128716.1753435924698', reloading
+2025-07-25 12:32:06,677 - werkzeug - INFO -  * Restarting with watchdog (inotify)
+2025-07-25 12:32:14,653 - __main__ - INFO - Starting Flask application on 0.0.0.0:5000
+2025-07-25 12:32:14,654 - __main__ - INFO - Debug mode: True
+2025-07-25 12:32:14,654 - __main__ - INFO - Initializing spam detector...
+2025-07-25 12:32:14,667 - __main__ - INFO - Successfully loaded pre-trained model from spam_detector_model.joblib
+2025-07-25 12:32:14,668 - __main__ - INFO - Spam detector initialized successfully on startup
+2025-07-25 12:32:14,713 - werkzeug - WARNING -  * Debugger is active!
+2025-07-25 12:32:14,715 - werkzeug - INFO -  * Debugger PIN: 140-877-960
+2025-07-25 12:32:16,496 - werkzeug - INFO -  * Detected change in '/home/sazalo/devpost/spam_detector.py.tmp.128716.1753435936426', reloading
+2025-07-25 12:32:18,976 - werkzeug - INFO -  * Restarting with watchdog (inotify)
+2025-07-25 12:32:25,307 - __main__ - INFO - Starting Flask application on 0.0.0.0:5000
+2025-07-25 12:32:25,308 - __main__ - INFO - Debug mode: True
+2025-07-25 12:32:25,309 - __main__ - INFO - Initializing spam detector...
+2025-07-25 12:32:25,322 - __main__ - INFO - Successfully loaded pre-trained model from spam_detector_model.joblib
+2025-07-25 12:32:25,323 - __main__ - INFO - Spam detector initialized successfully on startup
+2025-07-25 12:32:25,376 - werkzeug - WARNING -  * Debugger is active!
+2025-07-25 12:32:25,378 - werkzeug - INFO -  * Debugger PIN: 140-877-960
+2025-07-25 12:32:32,488 - werkzeug - INFO -  * Detected change in '/home/sazalo/devpost/spam_detector.py.tmp.128716.1753435952475', reloading
+2025-07-25 12:32:34,565 - werkzeug - INFO -  * Restarting with watchdog (inotify)
+2025-07-25 12:32:40,832 - __main__ - INFO - Starting Flask application on 0.0.0.0:5000
+2025-07-25 12:32:40,833 - __main__ - INFO - Debug mode: True
+2025-07-25 12:32:40,833 - __main__ - INFO - Initializing spam detector...
+2025-07-25 12:32:40,843 - __main__ - INFO - Successfully loaded pre-trained model from spam_detector_model.joblib
+2025-07-25 12:32:40,844 - __main__ - INFO - Spam detector initialized successfully on startup
+2025-07-25 12:32:40,890 - werkzeug - WARNING -  * Debugger is active!
+2025-07-25 12:32:40,892 - werkzeug - INFO -  * Debugger PIN: 140-877-960
+2025-07-25 12:33:13,195 - __main__ - INFO - Starting Flask application on 0.0.0.0:5000
+2025-07-25 12:33:13,196 - __main__ - INFO - Debug mode: True
+2025-07-25 12:33:13,196 - __main__ - INFO - Initializing spam detector...
+2025-07-25 12:33:13,204 - __main__ - INFO - Successfully loaded pre-trained model from spam_detector_model.joblib
+2025-07-25 12:33:13,204 - __main__ - INFO - Spam detector initialized successfully on startup
+2025-07-25 12:33:13,248 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.5:5000
+2025-07-25 12:33:13,249 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-25 12:33:13,266 - werkzeug - INFO -  * Restarting with watchdog (inotify)
+2025-07-25 12:33:18,249 - __main__ - INFO - Starting Flask application on 0.0.0.0:5000
+2025-07-25 12:33:18,250 - __main__ - INFO - Debug mode: True
+2025-07-25 12:33:18,250 - __main__ - INFO - Initializing spam detector...
+2025-07-25 12:33:18,259 - __main__ - INFO - Successfully loaded pre-trained model from spam_detector_model.joblib
+2025-07-25 12:33:18,260 - __main__ - INFO - Spam detector initialized successfully on startup
+2025-07-25 12:33:18,290 - werkzeug - WARNING -  * Debugger is active!
+2025-07-25 12:33:18,291 - werkzeug - INFO -  * Debugger PIN: 140-877-960
+2025-07-25 12:34:20,678 - __main__ - INFO - Serving main web interface
+2025-07-25 12:34:20,725 - werkzeug - INFO - 192.168.8.5 - - [25/Jul/2025 12:34:20] "GET / HTTP/1.1" 200 -
+2025-07-25 12:34:22,480 - __main__ - INFO - Serving main web interface
+2025-07-25 12:34:22,482 - werkzeug - INFO - 192.168.8.5 - - [25/Jul/2025 12:34:22] "GET / HTTP/1.1" 200 -
+2025-07-25 12:34:25,442 - __main__ - INFO - Analyzing email of length 115 characters
+2025-07-25 12:34:25,520 - __main__ - INFO - Analysis completed: NOT SPAM (5.8%) in 79.1ms
+2025-07-25 12:34:25,527 - werkzeug - INFO - 192.168.8.5 - - [25/Jul/2025 12:34:25] "POST /analyze HTTP/1.1" 200 -
+2025-07-25 12:34:58,000 - __main__ - INFO - Starting Flask application on 0.0.0.0:5000
+2025-07-25 12:34:58,000 - __main__ - INFO - Debug mode: True
+2025-07-25 12:34:58,000 - __main__ - INFO - Initializing spam detector...
+2025-07-25 12:34:58,011 - __main__ - INFO - Successfully loaded pre-trained model from spam_detector_model.joblib
+2025-07-25 12:34:58,011 - __main__ - INFO - Spam detector initialized successfully on startup
+2025-07-25 12:34:58,053 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.5:5000
+2025-07-25 12:34:58,054 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-25 12:34:58,074 - werkzeug - INFO -  * Restarting with watchdog (inotify)
+2025-07-25 12:35:02,853 - __main__ - INFO - Starting Flask application on 0.0.0.0:5000
+2025-07-25 12:35:02,854 - __main__ - INFO - Debug mode: True
+2025-07-25 12:35:02,854 - __main__ - INFO - Initializing spam detector...
+2025-07-25 12:35:02,861 - __main__ - INFO - Successfully loaded pre-trained model from spam_detector_model.joblib
+2025-07-25 12:35:02,861 - __main__ - INFO - Spam detector initialized successfully on startup
+2025-07-25 12:35:02,887 - werkzeug - WARNING -  * Debugger is active!
+2025-07-25 12:35:02,889 - werkzeug - INFO -  * Debugger PIN: 140-877-960
+2025-07-25 12:35:04,314 - __main__ - INFO - Serving main web interface
+2025-07-25 12:35:04,341 - werkzeug - INFO - 192.168.8.5 - - [25/Jul/2025 12:35:04] "GET / HTTP/1.1" 200 -
+2025-07-25 12:35:07,454 - __main__ - INFO - Analyzing email of length 115 characters
+2025-07-25 12:35:07,492 - __main__ - INFO - Analysis completed: NOT SPAM (5.8%) in 38.9ms
+2025-07-25 12:35:07,496 - werkzeug - INFO - 192.168.8.5 - - [25/Jul/2025 12:35:07] "POST /analyze HTTP/1.1" 200 -
+2025-07-25 12:35:34,000 - __main__ - INFO - Analyzing email of length 373 characters
+2025-07-25 12:35:34,042 - __main__ - INFO - Analysis completed: NOT SPAM (0.0%) in 43.6ms
+2025-07-25 12:35:34,056 - werkzeug - INFO - 192.168.8.5 - - [25/Jul/2025 12:35:34] "POST /analyze HTTP/1.1" 200 -
+2025-07-25 12:35:40,612 - __main__ - INFO - Analyzing email of length 124 characters
+2025-07-25 12:35:40,625 - __main__ - INFO - Analysis completed: NOT SPAM (0.2%) in 13.2ms
+2025-07-25 12:35:40,635 - werkzeug - INFO - 192.168.8.5 - - [25/Jul/2025 12:35:40] "POST /analyze HTTP/1.1" 200 -
+2025-07-25 12:37:00,725 - werkzeug - INFO -  * Detected change in '/home/sazalo/devpost/spam_detector.py.tmp.128716.1753436220715', reloading
+2025-07-25 12:37:02,623 - werkzeug - INFO -  * Restarting with watchdog (inotify)
+2025-07-25 12:37:09,226 - __main__ - INFO - Starting Flask application on 0.0.0.0:5000
+2025-07-25 12:37:09,227 - __main__ - INFO - Debug mode: True
+2025-07-25 12:37:09,227 - __main__ - INFO - Initializing spam detector...
+2025-07-25 12:37:09,240 - __main__ - INFO - Successfully loaded pre-trained model from spam_detector_model.joblib
+2025-07-25 12:37:09,240 - __main__ - INFO - Spam detector initialized successfully on startup
+2025-07-25 12:37:09,287 - werkzeug - WARNING -  * Debugger is active!
+2025-07-25 12:37:09,289 - werkzeug - INFO -  * Debugger PIN: 140-877-960
+2025-07-25 12:37:35,474 - werkzeug - INFO -  * Detected change in '/home/sazalo/devpost/spam_detector.py.tmp.128716.1753436255462', reloading
+2025-07-25 12:37:37,311 - werkzeug - INFO -  * Restarting with watchdog (inotify)
+2025-07-25 12:37:43,873 - __main__ - INFO - Starting Flask application on 0.0.0.0:5000
+2025-07-25 12:37:43,874 - __main__ - INFO - Debug mode: True
+2025-07-25 12:37:43,875 - __main__ - INFO - Initializing spam detector...
+2025-07-25 12:37:43,887 - __main__ - INFO - Successfully loaded pre-trained model from spam_detector_model.joblib
+2025-07-25 12:37:43,888 - __main__ - INFO - Spam detector initialized successfully on startup
+2025-07-25 12:37:43,935 - werkzeug - WARNING -  * Debugger is active!
+2025-07-25 12:37:43,937 - werkzeug - INFO -  * Debugger PIN: 140-877-960
+2025-07-25 12:37:54,231 - werkzeug - INFO -  * Detected change in '/home/sazalo/devpost/spam_detector.py.tmp.128716.1753436274221', reloading
+2025-07-25 12:37:56,334 - werkzeug - INFO -  * Restarting with watchdog (inotify)
+2025-07-25 12:38:02,847 - __main__ - INFO - Starting Flask application on 0.0.0.0:5000
+2025-07-25 12:38:02,847 - __main__ - INFO - Debug mode: True
+2025-07-25 12:38:02,848 - __main__ - INFO - Initializing spam detector...
+2025-07-25 12:38:02,856 - __main__ - INFO - Successfully loaded pre-trained model from spam_detector_model.joblib
+2025-07-25 12:38:02,856 - __main__ - INFO - Spam detector initialized successfully on startup
+2025-07-25 12:38:02,904 - werkzeug - WARNING -  * Debugger is active!
+2025-07-25 12:38:02,906 - werkzeug - INFO -  * Debugger PIN: 140-877-960
+2025-07-25 12:38:20,919 - __main__ - INFO - Analyzing email of length 124 characters
+2025-07-25 12:38:20,960 - __main__ - ERROR - Error during email analysis: index 16 is out of bounds for axis 0 with size 15
+2025-07-25 12:38:20,961 - __main__ - ERROR - Processing time before error: 41.6ms
+2025-07-25 12:38:20,976 - __main__ - ERROR - Traceback (most recent call last):
+  File "/home/sazalo/devpost/app.py", line 202, in analyze_email
+    result = spam_detector.predict_spam(cleaned_text)
+  File "/home/sazalo/devpost/spam_detector.py", line 451, in predict_spam
+    if custom_features[16] > 0:  # Spoofed domains detected
+       ~~~~~~~~~~~~~~~^^^^
+IndexError: index 16 is out of bounds for axis 0 with size 15
+
+2025-07-25 12:38:20,987 - werkzeug - INFO - 192.168.8.5 - - [25/Jul/2025 12:38:20] "[35m[1mPOST /analyze HTTP/1.1[0m" 500 -
+2025-07-25 12:38:22,522 - __main__ - INFO - Analyzing email of length 124 characters
+2025-07-25 12:38:22,540 - __main__ - ERROR - Error during email analysis: index 16 is out of bounds for axis 0 with size 15
+2025-07-25 12:38:22,542 - __main__ - ERROR - Processing time before error: 18.7ms
+2025-07-25 12:38:22,554 - __main__ - ERROR - Traceback (most recent call last):
+  File "/home/sazalo/devpost/app.py", line 202, in analyze_email
+    result = spam_detector.predict_spam(cleaned_text)
+  File "/home/sazalo/devpost/spam_detector.py", line 451, in predict_spam
+    if custom_features[16] > 0:  # Spoofed domains detected
+       ~~~~~~~~~~~~~~~^^^^
+IndexError: index 16 is out of bounds for axis 0 with size 15
+
+2025-07-25 12:38:22,559 - werkzeug - INFO - 192.168.8.5 - - [25/Jul/2025 12:38:22] "[35m[1mPOST /analyze HTTP/1.1[0m" 500 -
+2025-07-25 12:38:24,156 - __main__ - INFO - Serving main web interface
+2025-07-25 12:38:24,189 - werkzeug - INFO - 192.168.8.5 - - [25/Jul/2025 12:38:24] "GET / HTTP/1.1" 200 -
+2025-07-25 12:38:51,259 - __main__ - INFO - Analyzing email of length 124 characters
+2025-07-25 12:38:51,325 - __main__ - ERROR - Error during email analysis: index 16 is out of bounds for axis 0 with size 15
+2025-07-25 12:38:51,329 - __main__ - ERROR - Processing time before error: 66.3ms
+2025-07-25 12:38:51,353 - __main__ - ERROR - Traceback (most recent call last):
+  File "/home/sazalo/devpost/app.py", line 202, in analyze_email
+    result = spam_detector.predict_spam(cleaned_text)
+  File "/home/sazalo/devpost/spam_detector.py", line 451, in predict_spam
+    if custom_features[16] > 0:  # Spoofed domains detected
+       ~~~~~~~~~~~~~~~^^^^
+IndexError: index 16 is out of bounds for axis 0 with size 15
+
+2025-07-25 12:38:51,358 - werkzeug - INFO - 192.168.8.5 - - [25/Jul/2025 12:38:51] "[35m[1mPOST /analyze HTTP/1.1[0m" 500 -
+2025-07-25 12:39:03,847 - __main__ - INFO - Starting Flask application on 0.0.0.0:5000
+2025-07-25 12:39:03,848 - __main__ - INFO - Debug mode: True
+2025-07-25 12:39:03,848 - __main__ - INFO - Initializing spam detector...
+2025-07-25 12:39:03,854 - __main__ - INFO - Successfully loaded pre-trained model from spam_detector_model.joblib
+2025-07-25 12:39:03,855 - __main__ - INFO - Spam detector initialized successfully on startup
+2025-07-25 12:39:03,896 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.5:5000
+2025-07-25 12:39:03,897 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-25 12:39:03,913 - werkzeug - INFO -  * Restarting with watchdog (inotify)
+2025-07-25 12:39:09,276 - __main__ - INFO - Starting Flask application on 0.0.0.0:5000
+2025-07-25 12:39:09,277 - __main__ - INFO - Debug mode: True
+2025-07-25 12:39:09,277 - __main__ - INFO - Initializing spam detector...
+2025-07-25 12:39:09,285 - __main__ - INFO - Successfully loaded pre-trained model from spam_detector_model.joblib
+2025-07-25 12:39:09,285 - __main__ - INFO - Spam detector initialized successfully on startup
+2025-07-25 12:39:09,319 - werkzeug - WARNING -  * Debugger is active!
+2025-07-25 12:39:09,320 - werkzeug - INFO -  * Debugger PIN: 140-877-960
+2025-07-25 12:39:10,557 - __main__ - INFO - Serving main web interface
+2025-07-25 12:39:10,626 - werkzeug - INFO - 192.168.8.5 - - [25/Jul/2025 12:39:10] "GET / HTTP/1.1" 200 -
+2025-07-25 12:39:13,824 - __main__ - INFO - Analyzing email of length 124 characters
+2025-07-25 12:39:13,866 - __main__ - ERROR - Error during email analysis: index 16 is out of bounds for axis 0 with size 15
+2025-07-25 12:39:13,870 - __main__ - ERROR - Processing time before error: 42.3ms
+2025-07-25 12:39:13,903 - __main__ - ERROR - Traceback (most recent call last):
+  File "/home/sazalo/devpost/app.py", line 202, in analyze_email
+    result = spam_detector.predict_spam(cleaned_text)
+  File "/home/sazalo/devpost/spam_detector.py", line 451, in predict_spam
+    if custom_features[16] > 0:  # Spoofed domains detected
+       ~~~~~~~~~~~~~~~^^^^
+IndexError: index 16 is out of bounds for axis 0 with size 15
+
+2025-07-25 12:39:13,904 - werkzeug - INFO - 192.168.8.5 - - [25/Jul/2025 12:39:13] "[35m[1mPOST /analyze HTTP/1.1[0m" 500 -
+2025-07-25 12:39:46,901 - __main__ - INFO - Analyzing email of length 114 characters
+2025-07-25 12:39:46,915 - __main__ - ERROR - Error during email analysis: index 16 is out of bounds for axis 0 with size 15
+2025-07-25 12:39:46,925 - __main__ - ERROR - Processing time before error: 13.7ms
+2025-07-25 12:39:46,934 - __main__ - ERROR - Traceback (most recent call last):
+  File "/home/sazalo/devpost/app.py", line 202, in analyze_email
+    result = spam_detector.predict_spam(cleaned_text)
+  File "/home/sazalo/devpost/spam_detector.py", line 451, in predict_spam
+    if custom_features[16] > 0:  # Spoofed domains detected
+       ~~~~~~~~~~~~~~~^^^^
+IndexError: index 16 is out of bounds for axis 0 with size 15
+
+2025-07-25 12:39:46,940 - werkzeug - INFO - 192.168.8.5 - - [25/Jul/2025 12:39:46] "[35m[1mPOST /analyze HTTP/1.1[0m" 500 -
+2025-07-25 12:40:12,799 - werkzeug - INFO -  * Detected change in '/home/sazalo/devpost/spam_detector.py.tmp.128716.1753436412793', reloading
+2025-07-25 12:40:14,795 - werkzeug - INFO -  * Restarting with watchdog (inotify)
+2025-07-25 12:40:21,091 - __main__ - INFO - Starting Flask application on 0.0.0.0:5000
+2025-07-25 12:40:21,092 - __main__ - INFO - Debug mode: True
+2025-07-25 12:40:21,093 - __main__ - INFO - Initializing spam detector...
+2025-07-25 12:40:21,100 - __main__ - INFO - Successfully loaded pre-trained model from spam_detector_model.joblib
+2025-07-25 12:40:21,100 - __main__ - INFO - Spam detector initialized successfully on startup
+2025-07-25 12:40:21,140 - werkzeug - WARNING -  * Debugger is active!
+2025-07-25 12:40:21,141 - werkzeug - INFO -  * Debugger PIN: 140-877-960
+2025-07-25 12:40:32,599 - werkzeug - INFO -  * Detected change in '/home/sazalo/devpost/spam_detector.py.tmp.128716.1753436432589', reloading
+2025-07-25 12:40:34,214 - werkzeug - INFO -  * Restarting with watchdog (inotify)
+2025-07-25 12:40:40,755 - __main__ - INFO - Starting Flask application on 0.0.0.0:5000
+2025-07-25 12:40:40,755 - __main__ - INFO - Debug mode: True
+2025-07-25 12:40:40,756 - __main__ - INFO - Initializing spam detector...
+2025-07-25 12:40:40,765 - __main__ - INFO - Successfully loaded pre-trained model from spam_detector_model.joblib
+2025-07-25 12:40:40,766 - __main__ - INFO - Spam detector initialized successfully on startup
+2025-07-25 12:40:40,801 - werkzeug - WARNING -  * Debugger is active!
+2025-07-25 12:40:40,802 - werkzeug - INFO -  * Debugger PIN: 140-877-960
+2025-07-25 12:40:43,819 - werkzeug - INFO -  * Detected change in '/home/sazalo/devpost/spam_detector.py.tmp.128716.1753436443804', reloading
+2025-07-25 12:40:45,180 - werkzeug - INFO -  * Restarting with watchdog (inotify)
+2025-07-25 12:40:51,668 - __main__ - INFO - Starting Flask application on 0.0.0.0:5000
+2025-07-25 12:40:51,669 - __main__ - INFO - Debug mode: True
+2025-07-25 12:40:51,669 - __main__ - INFO - Initializing spam detector...
+2025-07-25 12:40:51,679 - __main__ - INFO - Successfully loaded pre-trained model from spam_detector_model.joblib
+2025-07-25 12:40:51,680 - __main__ - INFO - Spam detector initialized successfully on startup
+2025-07-25 12:40:51,732 - werkzeug - WARNING -  * Debugger is active!
+2025-07-25 12:40:51,734 - werkzeug - INFO -  * Debugger PIN: 140-877-960
+2025-07-25 12:40:56,424 - werkzeug - INFO -  * Detected change in '/home/sazalo/devpost/spam_detector.py.tmp.128716.1753436456409', reloading
+2025-07-25 12:40:58,558 - werkzeug - INFO -  * Restarting with watchdog (inotify)
+2025-07-25 12:41:04,596 - __main__ - INFO - Starting Flask application on 0.0.0.0:5000
+2025-07-25 12:41:04,597 - __main__ - INFO - Debug mode: True
+2025-07-25 12:41:04,598 - __main__ - INFO - Initializing spam detector...
+2025-07-25 12:41:04,608 - __main__ - INFO - Successfully loaded pre-trained model from spam_detector_model.joblib
+2025-07-25 12:41:04,608 - __main__ - INFO - Spam detector initialized successfully on startup
+2025-07-25 12:41:04,657 - werkzeug - WARNING -  * Debugger is active!
+2025-07-25 12:41:04,659 - werkzeug - INFO -  * Debugger PIN: 140-877-960
+2025-07-25 12:41:27,893 - __main__ - INFO - Starting Flask application on 0.0.0.0:5000
+2025-07-25 12:41:27,894 - __main__ - INFO - Debug mode: True
+2025-07-25 12:41:27,894 - __main__ - INFO - Initializing spam detector...
+2025-07-25 12:41:27,902 - __main__ - INFO - Successfully loaded pre-trained model from spam_detector_model.joblib
+2025-07-25 12:41:27,902 - __main__ - INFO - Spam detector initialized successfully on startup
+2025-07-25 12:41:27,945 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.5:5000
+2025-07-25 12:41:27,946 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-25 12:41:27,968 - werkzeug - INFO -  * Restarting with watchdog (inotify)
+2025-07-25 12:41:32,263 - __main__ - INFO - Starting Flask application on 0.0.0.0:5000
+2025-07-25 12:41:32,263 - __main__ - INFO - Debug mode: True
+2025-07-25 12:41:32,263 - __main__ - INFO - Initializing spam detector...
+2025-07-25 12:41:32,271 - __main__ - INFO - Successfully loaded pre-trained model from spam_detector_model.joblib
+2025-07-25 12:41:32,271 - __main__ - INFO - Spam detector initialized successfully on startup
+2025-07-25 12:41:32,300 - werkzeug - WARNING -  * Debugger is active!
+2025-07-25 12:41:32,301 - werkzeug - INFO -  * Debugger PIN: 140-877-960
+2025-07-25 12:42:04,843 - __main__ - INFO - Analyzing email of length 114 characters
+2025-07-25 12:42:04,874 - __main__ - INFO - Analysis completed: NOT SPAM (0.3%) in 31.3ms
+2025-07-25 12:42:04,881 - werkzeug - INFO - 192.168.8.5 - - [25/Jul/2025 12:42:04] "POST /analyze HTTP/1.1" 200 -
+2025-07-25 12:42:12,042 - __main__ - INFO - Analyzing email of length 123 characters
+2025-07-25 12:42:12,054 - __main__ - INFO - Analysis completed: NOT SPAM (0.2%) in 12.5ms
+2025-07-25 12:42:12,062 - werkzeug - INFO - 192.168.8.5 - - [25/Jul/2025 12:42:12] "POST /analyze HTTP/1.1" 200 -
+2025-07-25 12:42:14,038 - __main__ - INFO - Serving main web interface
+2025-07-25 12:42:14,075 - werkzeug - INFO - 192.168.8.5 - - [25/Jul/2025 12:42:14] "GET / HTTP/1.1" 200 -
+2025-07-25 12:42:16,813 - __main__ - INFO - Analyzing email of length 123 characters
+2025-07-25 12:42:16,830 - __main__ - INFO - Analysis completed: NOT SPAM (0.2%) in 17.9ms
+2025-07-25 12:42:16,833 - werkzeug - INFO - 192.168.8.5 - - [25/Jul/2025 12:42:16] "POST /analyze HTTP/1.1" 200 -
+2025-07-25 12:42:22,509 - __main__ - INFO - Feedback received: {'feedback_id': 'fb_20250725_124222', 'timestamp': '2025-07-25 12:42:22', 'email_length': 123, 'user_classification': 'SPAM', 'original_prediction': None, 'correction_made': None, 'user_comment': None}
+2025-07-25 12:42:22,510 - werkzeug - INFO - 192.168.8.5 - - [25/Jul/2025 12:42:22] "POST /feedback HTTP/1.1" 200 -
+2025-07-25 12:43:13,673 - werkzeug - INFO -  * Detected change in '/home/sazalo/devpost/retrain_model.py.tmp.128716.1753436593664', reloading
+2025-07-25 12:43:15,119 - werkzeug - INFO -  * Restarting with watchdog (inotify)
+2025-07-25 12:43:22,101 - __main__ - INFO - Starting Flask application on 0.0.0.0:5000
+2025-07-25 12:43:22,101 - __main__ - INFO - Debug mode: True
+2025-07-25 12:43:22,102 - __main__ - INFO - Initializing spam detector...
+2025-07-25 12:43:22,108 - __main__ - INFO - Successfully loaded pre-trained model from spam_detector_model.joblib
+2025-07-25 12:43:22,109 - __main__ - INFO - Spam detector initialized successfully on startup
+2025-07-25 12:43:22,138 - werkzeug - WARNING -  * Debugger is active!
+2025-07-25 12:43:22,140 - werkzeug - INFO -  * Debugger PIN: 140-877-960
+2025-07-25 12:43:34,655 - werkzeug - INFO -  * Detected change in '/home/sazalo/devpost/spam_detector.py.tmp.128716.1753436614645', reloading
+2025-07-25 12:43:36,675 - werkzeug - INFO -  * Restarting with watchdog (inotify)
+2025-07-25 12:43:42,511 - __main__ - INFO - Starting Flask application on 0.0.0.0:5000
+2025-07-25 12:43:42,512 - __main__ - INFO - Debug mode: True
+2025-07-25 12:43:42,512 - __main__ - INFO - Initializing spam detector...
+2025-07-25 12:43:42,521 - __main__ - INFO - Successfully loaded pre-trained model from spam_detector_model.joblib
+2025-07-25 12:43:42,522 - __main__ - INFO - Spam detector initialized successfully on startup
+2025-07-25 12:43:42,558 - werkzeug - WARNING -  * Debugger is active!
+2025-07-25 12:43:42,560 - werkzeug - INFO -  * Debugger PIN: 140-877-960
+2025-07-25 12:43:58,150 - __main__ - INFO - Serving main web interface
+2025-07-25 12:43:58,193 - werkzeug - INFO - 192.168.8.5 - - [25/Jul/2025 12:43:58] "GET / HTTP/1.1" 200 -
+2025-07-25 12:44:21,863 - __main__ - INFO - Analyzing email of length 123 characters
+2025-07-25 12:44:21,931 - __main__ - INFO - Analysis completed: NOT SPAM (0.2%) in 68.6ms
+2025-07-25 12:44:21,934 - werkzeug - INFO - 192.168.8.5 - - [25/Jul/2025 12:44:21] "POST /analyze HTTP/1.1" 200 -
+2025-07-25 12:44:26,742 - __main__ - INFO - Serving main web interface
+2025-07-25 12:44:26,746 - werkzeug - INFO - 192.168.8.5 - - [25/Jul/2025 12:44:26] "GET / HTTP/1.1" 200 -
+2025-07-25 12:44:29,637 - __main__ - INFO - Analyzing email of length 123 characters
+2025-07-25 12:44:29,687 - __main__ - INFO - Analysis completed: NOT SPAM (0.2%) in 49.9ms
+2025-07-25 12:44:29,705 - werkzeug - INFO - 192.168.8.5 - - [25/Jul/2025 12:44:29] "POST /analyze HTTP/1.1" 200 -
+2025-07-25 12:44:44,870 - __main__ - INFO - Starting Flask application on 0.0.0.0:5000
+2025-07-25 12:44:44,870 - __main__ - INFO - Debug mode: True
+2025-07-25 12:44:44,870 - __main__ - INFO - Initializing spam detector...
+2025-07-25 12:44:44,876 - __main__ - INFO - Successfully loaded pre-trained model from spam_detector_model.joblib
+2025-07-25 12:44:44,877 - __main__ - INFO - Spam detector initialized successfully on startup
+2025-07-25 12:44:44,919 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.5:5000
+2025-07-25 12:44:44,919 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-25 12:44:44,935 - werkzeug - INFO -  * Restarting with watchdog (inotify)
+2025-07-25 12:44:49,575 - __main__ - INFO - Starting Flask application on 0.0.0.0:5000
+2025-07-25 12:44:49,575 - __main__ - INFO - Debug mode: True
+2025-07-25 12:44:49,576 - __main__ - INFO - Initializing spam detector...
+2025-07-25 12:44:49,584 - __main__ - INFO - Successfully loaded pre-trained model from spam_detector_model.joblib
+2025-07-25 12:44:49,585 - __main__ - INFO - Spam detector initialized successfully on startup
+2025-07-25 12:44:49,613 - werkzeug - WARNING -  * Debugger is active!
+2025-07-25 12:44:49,614 - werkzeug - INFO -  * Debugger PIN: 140-877-960
+2025-07-25 12:44:50,868 - __main__ - INFO - Serving main web interface
+2025-07-25 12:44:50,915 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 12:44:50] "GET / HTTP/1.1" 200 -
+2025-07-25 12:44:51,162 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 12:44:51] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-25 12:44:53,515 - __main__ - INFO - Analyzing email of length 123 characters
+2025-07-25 12:44:53,551 - __main__ - INFO - Analysis completed: NOT SPAM (0.2%) in 36.7ms
+2025-07-25 12:44:53,555 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 12:44:53] "POST /analyze HTTP/1.1" 200 -
+2025-07-25 12:45:24,268 - werkzeug - INFO -  * Detected change in '/home/sazalo/devpost/app.py.tmp.128716.1753436724259', reloading
+2025-07-25 12:45:26,069 - werkzeug - INFO -  * Restarting with watchdog (inotify)
+2025-07-25 12:46:21,192 - __main__ - INFO - Starting Flask application on 0.0.0.0:5000
+2025-07-25 12:46:21,192 - __main__ - INFO - Debug mode: True
+2025-07-25 12:46:21,193 - __main__ - INFO - Initializing spam detector...
+2025-07-25 12:46:21,193 - __main__ - INFO - Training enhanced model with new features...
+2025-07-25 12:46:21,362 - __main__ - INFO - Model training completed:
+2025-07-25 12:46:21,363 - __main__ - INFO -   - Test Accuracy: 1.000
+2025-07-25 12:46:21,363 - __main__ - INFO -   - Cross-validation: 0.956 ± 0.058
+2025-07-25 12:46:21,363 - __main__ - INFO -   - Total Features: 210
+2025-07-25 12:46:21,364 - __main__ - INFO - Spam detector initialized successfully on startup
+2025-07-25 12:46:21,414 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.5:5000
+2025-07-25 12:46:21,414 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-25 12:46:21,437 - werkzeug - INFO -  * Restarting with watchdog (inotify)
+2025-07-25 12:46:25,822 - __main__ - INFO - Starting Flask application on 0.0.0.0:5000
+2025-07-25 12:46:25,823 - __main__ - INFO - Debug mode: True
+2025-07-25 12:46:25,823 - __main__ - INFO - Initializing spam detector...
+2025-07-25 12:46:25,824 - __main__ - INFO - Training enhanced model with new features...
+2025-07-25 12:46:26,022 - __main__ - INFO - Model training completed:
+2025-07-25 12:46:26,022 - __main__ - INFO -   - Test Accuracy: 1.000
+2025-07-25 12:46:26,022 - __main__ - INFO -   - Cross-validation: 0.956 ± 0.058
+2025-07-25 12:46:26,023 - __main__ - INFO -   - Total Features: 210
+2025-07-25 12:46:26,023 - __main__ - INFO - Spam detector initialized successfully on startup
+2025-07-25 12:46:26,054 - werkzeug - WARNING -  * Debugger is active!
+2025-07-25 12:46:26,055 - werkzeug - INFO -  * Debugger PIN: 140-877-960
+2025-07-25 12:46:42,841 - __main__ - INFO - Serving main web interface
+2025-07-25 12:46:42,902 - werkzeug - INFO - 192.168.8.5 - - [25/Jul/2025 12:46:42] "GET / HTTP/1.1" 200 -
+2025-07-25 12:46:45,835 - __main__ - INFO - Analyzing email of length 123 characters
+2025-07-25 12:46:45,873 - __main__ - INFO - Analysis completed: SPAM (99.0%) in 38.5ms
+2025-07-25 12:46:45,879 - werkzeug - INFO - 192.168.8.5 - - [25/Jul/2025 12:46:45] "POST /analyze HTTP/1.1" 200 -

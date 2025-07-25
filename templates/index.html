@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Spam Detector</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(45deg, #2c3e50, #34495e);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        .main-content {
+            padding: 40px;
+        }
+        
+        .input-section {
+            margin-bottom: 30px;
+        }
+        
+        .input-section label {
+            display: block;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        #emailText {
+            width: 100%;
+            min-height: 150px;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: inherit;
+            resize: vertical;
+            transition: border-color 0.3s ease;
+        }
+        
+        #emailText:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn-secondary {
+            background: #f8f9fa;
+            color: #6c757d;
+            border: 2px solid #e9ecef;
+        }
+        
+        .btn-secondary:hover {
+            background: #e9ecef;
+        }
+        
+        .result-section {
+            margin-top: 30px;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            display: none;
+        }
+        
+        .result-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        
+        .classification {
+            font-size: 1.5em;
+            font-weight: 700;
+            padding: 8px 16px;
+            border-radius: 6px;
+        }
+        
+        .spam {
+            background: #ffe6e6;
+            color: #d63384;
+        }
+        
+        .not-spam {
+            background: #e6f7e6;
+            color: #198754;
+        }
+        
+        .probability-bar {
+            background: #e9ecef;
+            height: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        
+        .probability-fill {
+            height: 100%;
+            border-radius: 10px;
+            transition: width 0.5s ease;
+        }
+        
+        .keywords-section {
+            margin-top: 20px;
+        }
+        
+        .keywords-section h4 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .keyword-tag {
+            display: inline-block;
+            background: #fff3cd;
+            color: #856404;
+            padding: 4px 8px;
+            margin: 2px;
+            border-radius: 4px;
+            font-size: 12px;
+            border: 1px solid #ffeaa7;
+        }
+        
+        .feedback-section {
+            margin-top: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+        }
+        
+        .feedback-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .btn-feedback {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        .btn-correct {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .btn-incorrect {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        
+        .loading {
+            text-align: center;
+            color: #6c757d;
+            font-style: italic;
+        }
+        
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 15px;
+        }
+        
+        .success {
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔍 Email Spam Detector</h1>
+            <p>AI-powered spam detection with explainable results</p>
+        </div>
+        
+        <div class="main-content">
+            <div class="input-section">
+                <label for="emailText">Paste your email content below:</label>
+                <textarea id="emailText" placeholder="Paste the email content you want to analyze for spam..."></textarea>
+                
+                <div class="button-group">
+                    <button class="btn btn-primary" onclick="analyzeEmail()">🔍 Analyze Email</button>
+                    <button class="btn btn-secondary" onclick="clearText()">🗑️ Clear</button>
+                </div>
+            </div>
+            
+            <div id="resultSection" class="result-section">
+                <div class="result-header">
+                    <span id="classification" class="classification"></span>
+                    <span id="confidence"></span>
+                </div>
+                
+                <div>
+                    <strong>Spam Probability: <span id="probability"></span>%</strong>
+                    <div class="probability-bar">
+                        <div id="probabilityFill" class="probability-fill"></div>
+                    </div>
+                </div>
+                
+                <div id="keywordsSection" class="keywords-section">
+                    <h4>Flagged Keywords:</h4>
+                    <div id="keywords"></div>
+                </div>
+                
+                <div class="feedback-section">
+                    <h4>Was this classification correct?</h4>
+                    <p>Help improve the model by providing feedback:</p>
+                    <div class="feedback-buttons">
+                        <button class="btn-feedback btn-correct" onclick="submitFeedback(true)">✅ Correct</button>
+                        <button class="btn-feedback btn-incorrect" onclick="submitFeedback(false)">❌ Incorrect</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="loading" class="loading" style="display: none;">
+                Analyzing email...
+            </div>
+            
+            <div id="message"></div>
+        </div>
+    </div>
+
+    <script>
+        let currentEmailText = '';
+        let currentResult = null;
+
+        function analyzeEmail() {
+            const emailText = document.getElementById('emailText').value.trim();
+            
+            if (!emailText) {
+                showMessage('Please enter some email content to analyze.', 'error');
+                return;
+            }
+            
+            currentEmailText = emailText;
+            
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('resultSection').style.display = 'none';
+            document.getElementById('message').innerHTML = '';
+            
+            fetch('/analyze', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email_text: emailText })
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('loading').style.display = 'none';
+                
+                if (data.error) {
+                    showMessage(data.error, 'error');
+                    return;
+                }
+                
+                currentResult = data;
+                displayResults(data);
+            })
+            .catch(error => {
+                document.getElementById('loading').style.display = 'none';
+                showMessage('Error analyzing email. Please try again.', 'error');
+                console.error('Error:', error);
+            });
+        }
+        
+        function displayResults(data) {
+            document.getElementById('classification').textContent = data.classification;
+            document.getElementById('classification').className = 'classification ' + (data.is_spam ? 'spam' : 'not-spam');
+            document.getElementById('confidence').textContent = data.confidence + ' confidence';
+            document.getElementById('probability').textContent = data.spam_probability;
+            
+            const probabilityFill = document.getElementById('probabilityFill');
+            probabilityFill.style.width = data.spam_probability + '%';
+            probabilityFill.style.background = data.spam_probability > 50 ? 
+                'linear-gradient(45deg, #dc3545, #fd7e14)' : 
+                'linear-gradient(45deg, #28a745, #20c997)';
+            
+            const keywordsDiv = document.getElementById('keywords');
+            if (data.flagged_keywords && data.flagged_keywords.length > 0) {
+                keywordsDiv.innerHTML = data.flagged_keywords.map(keyword => 
+                    `<span class="keyword-tag">${keyword}</span>`
+                ).join('');
+                document.getElementById('keywordsSection').style.display = 'block';
+            } else {
+                keywordsDiv.innerHTML = '<span class="keyword-tag">No specific keywords flagged</span>';
+            }
+            
+            document.getElementById('resultSection').style.display = 'block';
+        }
+        
+        function submitFeedback(isCorrect) {
+            if (!currentEmailText || currentResult === null) {
+                showMessage('No analysis to provide feedback on.', 'error');
+                return;
+            }
+            
+            const actualIsSpam = isCorrect ? currentResult.is_spam : !currentResult.is_spam;
+            
+            fetch('/feedback', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    email_text: currentEmailText,
+                    is_spam: actualIsSpam
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    showMessage(data.error, 'error');
+                } else {
+                    showMessage(data.message, 'success');
+                }
+            })
+            .catch(error => {
+                showMessage('Error submitting feedback. Please try again.', 'error');
+                console.error('Error:', error);
+            });
+        }
+        
+        function clearText() {
+            document.getElementById('emailText').value = '';
+            document.getElementById('resultSection').style.display = 'none';
+            document.getElementById('message').innerHTML = '';
+            currentEmailText = '';
+            currentResult = null;
+        }
+        
+        function showMessage(message, type) {
+            const messageDiv = document.getElementById('message');
+            messageDiv.innerHTML = `<div class="${type}">${message}</div>`;
+        }
+        
+        // Allow Enter key to analyze (Ctrl+Enter for multiline)
+        document.getElementById('emailText').addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' && e.ctrlKey) {
+                analyzeEmail();
+            }
+        });
+    </script>
+</body>
+</html>
