@@ -1,5 +1,4 @@
 export default function handler(req, res) {
-  // Set CORS headers
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
@@ -19,18 +18,14 @@ export default function handler(req, res) {
     return res.status(400).json({ error: 'Email text required' });
   }
 
-  try {
-    const result = detectSpam(email_text);
-    res.status(200).json(result);
-  } catch (error) {
-    res.status(500).json({ error: 'Analysis failed' });
-  }
+  const result = detectSpam(email_text);
+  res.status(200).json(result);
 }
 
 function detectSpam(text) {
   const spamKeywords = {
     urgency: ['urgent', 'immediate', 'act now', 'limited time', 'expires', 'deadline', 'within', 'hours', 'minutes', 'before', 'face arrest', 'avoid'],
-    money: ['money', 'cash', 'prize', 'winner', 'lottery', 'million', 'thousand', 'owe', 'refund', 'payment', 'taxes', 'fees', '$'],
+    money: ['money', 'cash', 'prize', 'winner', 'lottery', 'million', 'thousand', 'owe', 'refund', 'payment', 'taxes', 'fees'],
     free: ['free', 'no cost', 'complimentary', 'gratis'],
     callToAction: ['click', 'call', 'download', 'visit', 'claim', 'order', 'verify', 'update', 'contact', 'restore', 'log in', 'confirm'],
     personalInfo: ['bank', 'account', 'password', 'ssn', 'credit', 'social security', 'identity', 'billing', 'benefits', 'activity', 'login'],
@@ -40,13 +35,12 @@ function detectSpam(text) {
   };
 
   const spamDomains = ['secure-', 'verify-', '-secure', '-verification', '-update', '-portal', '-center'];
-
   const lowerText = text.toLowerCase();
   let spamScore = 0;
   const flaggedKeywords = [];
   const customFlags = [];
 
-  // Check each category
+  // Check keywords
   Object.entries(spamKeywords).forEach(([category, keywords]) => {
     let categoryMatches = 0;
     keywords.forEach(keyword => {
@@ -58,56 +52,33 @@ function detectSpam(text) {
       }
     });
 
-    // Weight different categories
-    const weights = {
-      urgency: 15,
-      money: 12,
-      threats: 20,
-      authority: 18,
-      callToAction: 8,
-      personalInfo: 10,
-      phishingVerbs: 15,
-      free: 5
-    };
-
+    const weights = { urgency: 15, money: 12, threats: 20, authority: 18, callToAction: 8, personalInfo: 10, phishingVerbs: 15, free: 5 };
     spamScore += categoryMatches * (weights[category] || 5);
 
-    // Add custom flags
     if (categoryMatches > 0) {
       switch(category) {
-        case 'authority':
-          customFlags.push('authority_impersonation');
-          break;
-        case 'threats':
-          customFlags.push('threat_language_detected');
-          break;
-        case 'phishingVerbs':
-          customFlags.push('phishing_language_detected');
-          break;
-        case 'urgency':
-          customFlags.push('urgency_tactics');
-          break;
+        case 'authority': customFlags.push('authority_impersonation'); break;
+        case 'threats': customFlags.push('threat_language_detected'); break;
+        case 'phishingVerbs': customFlags.push('phishing_language_detected'); break;
+        case 'urgency': customFlags.push('urgency_tactics'); break;
       }
     }
   });
 
-  // Check for suspicious domains
-  const hasSuspiciousDomain = spamDomains.some(domain => lowerText.includes(domain));
-  if (hasSuspiciousDomain) {
+  // Check domains
+  if (spamDomains.some(domain => lowerText.includes(domain))) {
     spamScore += 25;
     customFlags.push('suspicious_domains_detected');
   }
 
-  // Check for excessive capitalization
+  // Check formatting
   const upperCaseRatio = (text.match(/[A-Z]/g) || []).length / text.length;
   if (upperCaseRatio > 0.3) {
     spamScore += 15;
     customFlags.push('excessive_capitalization');
   }
 
-  // Check for multiple exclamation marks
-  const exclamationCount = (text.match(/!/g) || []).length;
-  if (exclamationCount > 2) {
+  if ((text.match(/!/g) || []).length > 2) {
     spamScore += 10;
     customFlags.push('excessive_punctuation');
   }
@@ -123,15 +94,7 @@ function detectSpam(text) {
   }
 
   const isSpam = probability > 50;
-  
-  let confidence;
-  if (probability > 80 || probability < 20) {
-    confidence = 'High';
-  } else if (probability > 60 || probability < 40) {
-    confidence = 'Medium';
-  } else {
-    confidence = 'Low';
-  }
+  let confidence = probability > 80 || probability < 20 ? 'High' : probability > 60 || probability < 40 ? 'Medium' : 'Low';
 
   return {
     spam_probability: Math.round(probability * 10) / 10,

@@ -1,0 +1,18 @@
+{
+  "name": "email-spam-detector",
+  "version": "1.0.0",
+  "description": "AI-powered email spam detection with explainable results",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'No build step required for static site'",
+    "start": "vercel dev"
+  },
+  "keywords": ["spam", "detection", "ml", "email", "security"],
+  "author": "DevPost Competition Team",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "vercel": "^34.0.0"
+  }
+}
